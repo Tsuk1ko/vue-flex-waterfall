@@ -1,0 +1,48 @@
+{
+  "name": "vue-flex-waterfall",
+  "version": "1.0.0",
+  "main": "src/Waterfall.vue",
+  "scripts": {
+    "serve:demo": "vue-cli-service serve",
+    "build:demo": "vue-cli-service build",
+    "build": "vue-cli-service build --target wc --name vue-flex-waterfall --dest dist src/Waterfall.vue && node ./tools/rmDemoHTML.js",
+    "lint": "vue-cli-service lint"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.1",
+    "@vue/cli-plugin-eslint": "~4.3.1",
+    "@vue/cli-service": "~4.3.1",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsuk1ko/vue-flex-waterfall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tsuk1ko/vue-flex-waterfall/issues"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
