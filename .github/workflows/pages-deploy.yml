@@ -6,6 +6,7 @@ on:
     paths:
       - 'src/**'
       - 'demo/**'
+      - '.github/workflows/pages-deploy.yml'
 jobs:
   build-and-deploy-demo:
     env:
