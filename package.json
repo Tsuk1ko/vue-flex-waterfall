@@ -2,6 +2,7 @@
   "name": "vue-flex-waterfall",
   "version": "1.0.1",
   "main": "src/Waterfall.vue",
+  "browser": "dist/vue-flex-waterfall.min.js",
   "scripts": {
     "serve:demo": "vue-cli-service serve",
     "build:demo": "vue-cli-service build",
