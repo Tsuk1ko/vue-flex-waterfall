@@ -1,6 +1,6 @@
 {
   "name": "vue-flex-waterfall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/Waterfall.vue",
   "scripts": {
     "serve:demo": "vue-cli-service serve",
@@ -19,6 +19,8 @@
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
+  "author": "Jindai Kirin",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tsuk1ko/vue-flex-waterfall.git"
@@ -26,6 +28,11 @@
   "bugs": {
     "url": "https://github.com/Tsuk1ko/vue-flex-waterfall/issues"
   },
+  "keywords": [
+    "vue",
+    "flex",
+    "waterfall"
+  ],
   "eslintConfig": {
     "root": true,
     "env": {
