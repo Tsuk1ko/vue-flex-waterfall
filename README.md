@@ -56,9 +56,9 @@ export default {
 <script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@1.0/dist/vue-flex-waterfall.min.js"></script>
 ```
 
-### Props
+## Props
 
-#### col
+### col
 
 Type: `Number`
 
@@ -66,7 +66,7 @@ Default: `1`
 
 Default number of column. Use the `break-at` prop to specify breakpoints for this value.
 
-#### col-spacing
+### col-spacing
 
 Type: `Number | String`
 
@@ -74,7 +74,7 @@ Default: `0`
 
 Column spacing. The unit is *px* when it is a number.
 
-#### break-at
+### break-at
 
 Type: `Object`
 
@@ -82,10 +82,16 @@ Default: `null`
 
 This object allows you to specify how the number of columns will change based on the width of the viewport. Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
 
-#### break-by-container
+### break-by-container
 
 Type: `Boolean`
 
 Default: `false`
 
 When enable, the breakpoints will be based on the container width instead of the window width.
+
+## Events
+
+### order-update
+
+Will be emited after flex orders of slot elements are updated.
