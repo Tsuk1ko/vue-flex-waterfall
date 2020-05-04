@@ -1,6 +1,6 @@
 {
   "name": "vue-flex-waterfall",
-  "description": "A waterfall flow of horizontal sorting realized by flex layout for Vue.js",
+  "description": "A horizontal sorting waterfall layout component for Vue.js, realized by flex layout",
   "version": "1.0.2",
   "main": "src/Waterfall.vue",
   "browser": "dist/vue-flex-waterfall.min.js",

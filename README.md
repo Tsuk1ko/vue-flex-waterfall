@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/vue-flex-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/vue-flex-waterfall)
 [![License](https://img.shields.io/npm/l/vue-flex-waterfall.svg?style=flat-square)](LICENSE)
 
-A waterfall flow of horizontal sorting realized by flex layout for Vue.js .
+A horizontal sorting waterfall layout component for Vue.js, realized by flex layout.
 
 Refer to [纯 CSS 实现横向排序的瀑布流式布局](https://jessieji.com/2019/pure-css-masonry).
 
