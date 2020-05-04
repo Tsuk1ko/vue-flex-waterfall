@@ -1,3 +1,7 @@
 /.github
 /demo
 /tools
+.gitattributes
+.prettierrc
+babel.config.js
+vue.config.js
