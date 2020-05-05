@@ -1,18 +1,5 @@
 <template>
-  <div id="app" class="mdui-text-center">
-    <div class="mdui-m-y-4">
-      <div class="mdui-typo-display-2">Vue Flex Waterfall Demo</div>
-      <div class="mdui-typo mdui-m-t-1">
-        GitHub:
-        <a
-          href="https://github.com/Tsuk1ko/vue-flex-waterfall"
-          target="_blank"
-        >Tsuk1ko/vue-flex-waterfall</a>
-      </div>
-      <p
-        class="mdui-typo-subheading"
-      >Try to add, delete or modify some blocks, and resize the window!</p>
-    </div>
+  <div id="app">
     <vue-flex-waterfall
       class="mdui-container mdui-m-b-4"
       :col="4"
