@@ -6,8 +6,8 @@
   "unpkg": "dist/vue-flex-waterfall.min.js",
   "jsdelivr": "dist/vue-flex-waterfall.min.js",
   "scripts": {
-    "serve:demo": "vue-cli-service serve",
-    "build:demo": "vue-cli-service build",
+    "serve:demo": "cd ./demo && vue-cli-service serve",
+    "build:demo": "cd ./demo && vue-cli-service build",
     "build": "vue-cli-service build --target wc --name vue-flex-waterfall --dest dist src/Waterfall.vue && node ./tools/rmDemoHTML.js",
     "lint": "vue-cli-service lint"
   },
