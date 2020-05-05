@@ -70,6 +70,7 @@ export default {
         const ikv = [parseInt(k) || 0, parseInt(v) || 0];
         if (Math.min(...ikv) > 0) valid.push(ikv);
       });
+      valid.length ? this.addResizeListener() : this.removeResizeListener();
       return valid.sort(([w1], [w2]) => w1 - w2);
     },
   },
@@ -106,16 +107,19 @@ export default {
     stopObserve() {
       this.observer && this.observer.disconnect();
     },
-  },
-  created() {
-    window.addEventListener('resize', this.updateWidth);
+    addResizeListener() {
+      window.addEventListener('resize', this.updateWidth);
+    },
+    removeResizeListener() {
+      window.removeEventListener('resize', this.updateWidth);
+    },
   },
   mounted() {
     this.updateOrder(false);
   },
   beforeDestroy() {
     this.stopObserve();
-    window.removeEventListener('resize', this.updateWidth);
+    this.removeResizeListener();
   },
 };
 </script>
