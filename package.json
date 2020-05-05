@@ -1,9 +1,10 @@
 {
   "name": "vue-flex-waterfall",
   "description": "A horizontal sorting waterfall layout component for Vue.js, realized by flex layout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "src/Waterfall.vue",
-  "browser": "dist/vue-flex-waterfall.min.js",
+  "unpkg": "dist/vue-flex-waterfall.min.js",
+  "jsdelivr": "dist/vue-flex-waterfall.min.js",
   "scripts": {
     "serve:demo": "vue-cli-service serve",
     "build:demo": "vue-cli-service build",
@@ -37,6 +38,7 @@
     "waterfall"
   ],
   "eslintConfig": {
+    "ignorePatterns": ["dist"],
     "root": true,
     "env": {
       "node": true
