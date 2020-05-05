@@ -5,7 +5,7 @@
 
 A horizontal sorting waterfall layout component for Vue.js, realized by flex layout.
 
-Refer to [纯 CSS 实现横向排序的瀑布流式布局](https://jessieji.com/2019/pure-css-masonry).
+Refer to [CSS masonry with flexbox, :nth-child(), and order](https://tobiasahlin.com/blog/masonry-with-css/).
 
 [中文文档](README-ZH.md)
 
