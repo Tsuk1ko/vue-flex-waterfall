@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <vue-flex-waterfall
-      class="mdui-container mdui-m-b-4"
-      :col="4"
+      class="mdui-container mdui-m-b-4 mdui-p-a-0"
+      :col="5"
       :col-spacing="15"
       :break-at="breakAt"
+      :break-by-container="true"
       @order-update="onOrderUpdate"
+      style="align-content: center;"
     >
       <div
         class="item"
-        v-for="(item, index ) in items"
+        v-for="(item, index) in items"
         :key="item.i"
         :style="{ height: `${item.h}px` }"
       >
@@ -43,11 +45,13 @@ export default {
   data: () => ({
     items: [300, 250, 200, 150, 300, 200, 250, 260, 200, 150, 265, 205, 150, 150].map((h, i) => ({ i: i + 1, h })),
     nextI: 15,
-    breakAt: {
-      900: 3,
-      600: 2,
-      300: 1,
-    },
+    breakAt: (() => {
+      const obj = {};
+      for (let i = 1; i <= 4; i++) {
+        obj[200 * (i + 1) + 15 * i] = i;
+      }
+      return obj;
+    })(),
   }),
   methods: {
     deleteItem(i) {
@@ -56,6 +60,9 @@ export default {
     onOrderUpdate() {
       console.log('order updated');
     },
+  },
+  created() {
+    console.log('break-at', JSON.parse(JSON.stringify(this.breakAt)));
   },
 };
 </script>
@@ -74,7 +81,7 @@ input:focus {
 }
 .item {
   position: relative;
-  width: calc((100% - 45px) / 4);
+  width: 200px;
   border-radius: 4px;
   background-color: #a1cbfa;
   border: 1px solid #4290e2;
@@ -124,20 +131,5 @@ input:focus {
 }
 .item .close:hover {
   color: #eee;
-}
-@media screen and (max-width: 900px) {
-  .item {
-    width: calc((100% - 30px) / 3);
-  }
-}
-@media screen and (max-width: 600px) {
-  .item {
-    width: calc((100% - 15px) / 2);
-  }
-}
-@media screen and (max-width: 300px) {
-  .item {
-    width: 100%;
-  }
 }
 </style>
