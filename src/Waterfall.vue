@@ -40,9 +40,6 @@ export default {
     };
   },
   watch: {
-    validCol() {
-      this.updateOrder();
-    },
     validSortedBreakAt: {
       handler() {
         this.updateOrder();
@@ -115,7 +112,9 @@ export default {
     },
   },
   mounted() {
+    this.validSortedBreakAt.length && this.updateWidth();
     this.updateOrder(false);
+    this.$watch('validCol', () => this.updateOrder());
   },
   beforeDestroy() {
     this.stopObserve();
