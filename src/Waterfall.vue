@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       containerHeight: 0,
-      orders: [],
       winWidth: 0,
       observer: new MutationObserver(this.updateOrder),
     };
@@ -82,17 +81,22 @@ export default {
     updateOrder(emitEvent = true) {
       this.stopObserve();
       this.containerHeight = 0;
+      let orderChanged = false;
       const colsHeight = Array(this.validCol).fill(0);
       const items = this.items();
       items.forEach(({ elm, ph }) => {
         const minI = colsHeight.indexOf(Math.min(...colsHeight));
-        elm.style.order = minI + 1;
+        const [oldOrder, newOrder] = [elm.style.order, minI + 1];
+        if (oldOrder != newOrder) {
+          elm.style.order = newOrder;
+          orderChanged = true;
+        }
         colsHeight[minI] += ph;
       });
       this.containerHeight = Math.max(...colsHeight);
       this.$nextTick(() => {
         this.startObserve();
-        emitEvent && this.$emit('order-update');
+        emitEvent && orderChanged && this.$emit('order-update');
       });
     },
     updateWidth() {
