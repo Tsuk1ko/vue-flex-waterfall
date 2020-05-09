@@ -95,3 +95,8 @@ When enable, the breakpoints will be based on the container width instead of the
 ### order-update
 
 Will be emited after flex orders of slot elements are updated.
+
+## Tips
+
+1. You can set `margin-bottom` style for slot elements to control their vertical spacing.
+2. You can set `align-content` style for vue-flex-waterfall component to control column alignment.

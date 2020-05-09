@@ -93,3 +93,8 @@ export default {
 ### order-update
 
 插槽中元素的 order 属性被更新后触发
+
+## 提示
+
+1. 你可以通过给瀑布流内元素设置 `margin-bottom` 样式来控制其垂直间距
+2. 你可以通过给组件设置 `align-content` 样式来改变列对齐方式
