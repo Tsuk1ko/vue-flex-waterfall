@@ -88,6 +88,14 @@ export default {
 
 为`true`时，`break-at` 将使用瀑布流容器宽度，而不是 window 宽度
 
+### forceAutoHeight
+
+Type: `Boolean`
+
+Default: `false`
+
+强制 container 高度为自动
+
 ## 事件
 
 ### order-update

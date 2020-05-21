@@ -90,6 +90,14 @@ Default: `false`
 
 When enable, the breakpoints will be based on the container width instead of the window width.
 
+### forceAutoHeight
+
+Type: `Boolean`
+
+Default: `false`
+
+force height to automatic
+
 ## Events
 
 ### order-update

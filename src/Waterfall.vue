@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-flex-waterfall" ref="container" :style="{ height: validContainerHeight }">
+  <div class="vue-flex-waterfall" ref="container" :style="{ height: forceAutoHeight ? 'auto' : validContainerHeight }">
     <slot></slot>
     <div
       class="vue-flex-waterfall-split"
@@ -30,6 +30,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    forceAutoHeight: {
+      type: Boolean,
+      default: false,
+    }
   },
   data() {
     return {
