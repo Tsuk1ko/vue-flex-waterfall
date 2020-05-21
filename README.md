@@ -58,6 +58,16 @@ export default {
 
 ## Props
 
+### height
+
+Type: `Number | String`
+
+Default: `null`
+
+You can specify the height of the container. If not, height will be calculated automatically.
+
+The unit is *px* when it is a number.
+
 ### col
 
 Type: `Number`
@@ -94,7 +104,15 @@ When enable, the breakpoints will be based on the container width instead of the
 
 ### order-update
 
-Will be emited after flex orders of slot elements are updated.
+Will be emited after `order` of slot elements are updated.
+
+## Methods
+
+### updateOrder
+
+You can call this method to trigger `order` updating.
+
+How to call component method: [Vue.js Guide - Accessing Child Component Instances & Child Elements](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements)
 
 ## Tips
 

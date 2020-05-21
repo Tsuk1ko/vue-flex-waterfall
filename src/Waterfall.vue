@@ -1,5 +1,10 @@
 <template>
-  <div class="vue-flex-waterfall" ref="container" :style="{ height: validContainerHeight }">
+  <div
+    class="vue-flex-waterfall"
+    ref="container"
+    :style="{ height: validContainerHeight }"
+    @load.capture="updateOrder()"
+  >
     <slot></slot>
     <div
       class="vue-flex-waterfall-split"
@@ -14,6 +19,10 @@
 export default {
   name: 'VueFlexWaterfall',
   props: {
+    height: {
+      type: [Number, String],
+      default: null,
+    },
     col: {
       type: Number,
       default: 1,
@@ -53,12 +62,10 @@ export default {
       return Math.floor(breakPoint ? breakPoint[1] : col);
     },
     validColSpacing() {
-      const cs = this.colSpacing;
-      if (typeof cs === 'number') return `${cs}px`;
-      return cs;
+      return this.validLength(this.colSpacing);
     },
     validContainerHeight() {
-      return this.containerHeight > 0 ? `${this.containerHeight}px` : '';
+      return this.validLength(this.height) || (this.containerHeight > 0 ? `${this.containerHeight}px` : '');
     },
     validSortedBreakAt() {
       const valid = [];
@@ -71,6 +78,10 @@ export default {
     },
   },
   methods: {
+    validLength(num) {
+      if (!num) return 0;
+      return /^[0-9]+$/.test(String(num)) ? `${num}px` : num;
+    },
     items() {
       return (this.$slots.default || []).map(({ elm }) => {
         const { marginTop, marginBottom } = window.getComputedStyle(elm);

@@ -56,6 +56,16 @@ export default {
 
 ## 参数
 
+### height
+
+类型：`Number | String`
+
+默认值：`null`
+
+你可以手动指定容器高度，当不指定时，会自动计算高度
+
+列间距，给定一个数字时其单位为 *px*
+
 ### col
 
 类型：`Number`
@@ -92,7 +102,15 @@ export default {
 
 ### order-update
 
-插槽中元素的 order 属性被更新后触发
+插槽中元素的 `order` 属性被更新后触发
+
+## 方法
+
+### updateOrder
+
+调用该方法可以手动触发 `order` 更新
+
+如何调用组件方法：[Vue.js 文档 - 访问子组件实例或子元素](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)
 
 ## 提示
 
