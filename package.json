@@ -1,7 +1,7 @@
 {
   "name": "vue-flex-waterfall",
   "description": "A horizontal sorting waterfall layout component for Vue.js, realized by flex layout",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "src/Waterfall.vue",
   "unpkg": "dist/vue-flex-waterfall.min.js",
   "jsdelivr": "dist/vue-flex-waterfall.min.js",
