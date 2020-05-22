@@ -24,7 +24,7 @@ export default {
       default: null,
     },
     col: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     colSpacing: {
@@ -57,7 +57,8 @@ export default {
   },
   computed: {
     validCol() {
-      const col = this.col < 1 ? 1 : this.col;
+      const intCol = parseInt(this.col);
+      const col = !intCol || intCol < 1 ? 1 : intCol;
       const breakPoint = this.validSortedBreakAt.find(([w]) => this.winWidth && this.winWidth <= w);
       return Math.floor(breakPoint ? breakPoint[1] : col);
     },

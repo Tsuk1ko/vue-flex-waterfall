@@ -2,19 +2,14 @@
   <div id="app">
     <vue-flex-waterfall
       class="mdui-container mdui-m-b-4 mdui-p-a-0"
-      :col="5"
-      :col-spacing="15"
+      col="5"
+      col-spacing="15"
       :break-at="breakAt"
       :break-by-container="true"
       @order-update="onOrderUpdate"
       style="align-content: center;"
     >
-      <div
-        class="item"
-        v-for="(item, index) in items"
-        :key="item.i"
-        :style="{ height: `${item.h}px` }"
-      >
+      <div class="item" v-for="(item, index) in items" :key="item.i" :style="{ height: `${item.h}px` }">
         <i class="mdui-icon material-icons close" @click="deleteItem(index)">close</i>
         <div class="num">{{ item.i }}</div>
         <div class="width mdui-m-t-1">
@@ -24,7 +19,8 @@
             min="100"
             placeholder="Width (px)"
             v-model="item.h"
-          /> px
+          />
+          px
         </div>
       </div>
       <div class="item new" @click="items.push({ i: nextI++, h: 200 })">

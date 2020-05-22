@@ -27,11 +27,9 @@ npm i vue-flex-waterfall
 
 ```html
 <vue-flex-waterfall
-  :col="4"
-  :col-spacing="15"
+  col="4"
+  col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
-  :break-by-container="false"
-  @order-update="onOrderUpdate"
 >
   <!-- items -->
 </vue-flex-waterfall>
@@ -70,7 +68,7 @@ The unit is *px* when it is a number.
 
 ### col
 
-Type: `Number`
+Type: `Number | String`
 
 Default: `1`
 

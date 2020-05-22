@@ -25,11 +25,9 @@ npm i vue-flex-waterfall
 
 ```html
 <vue-flex-waterfall
-  :col="4"
-  :col-spacing="15"
+  col="4"
+  col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
-  :break-by-container="false"
-  @order-update="onOrderUpdate"
 >
   <!-- items -->
 </vue-flex-waterfall>
@@ -68,7 +66,7 @@ export default {
 
 ### col
 
-类型：`Number`
+类型：`Number | String`
 
 默认值：`1`
 
