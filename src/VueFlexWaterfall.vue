@@ -1,0 +1,139 @@
+<template>
+  <div
+    ref="container"
+    :style="{ height: validContainerHeight }"
+    style="display: flex; align-content: flex-start; flex-flow: column wrap"
+    @load.capture="updateOrder()"
+  >
+    <slot></slot>
+    <div
+      vue-flex-waterfall-split
+      v-for="i in validCol - 1"
+      :key="`split-${i}`"
+      :style="{ order: i, width: validColSpacing }"
+      style="flex-basis: 100%"
+    ></div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { throttle } from 'lodash-es';
+
+const emit = defineEmits<{ (event: 'orderUpdated'): void }>();
+const props = withDefaults(
+  defineProps<{
+    height?: number | string;
+    col?: number | string;
+    colSpacing?: number | string;
+    breakAt?: Record<string, number>;
+    breakByContainer?: boolean;
+  }>(),
+  {
+    col: 1,
+    colSpacing: 0,
+    breakAt: () => ({}),
+    breakByContainer: false,
+  },
+);
+
+const containerHeight = ref(0);
+const winWidth = ref(0);
+const container = ref<HTMLElement>();
+const observer = new MutationObserver(() => updateOrder());
+
+const validCol = computed(() => {
+  const intCol = Number(props.col);
+  const col = !intCol || intCol < 1 ? 1 : intCol;
+  const breakPoint = validSortedBreakAt.value.find(([w]) => winWidth.value && winWidth.value <= w);
+  return Math.floor(breakPoint ? breakPoint[1] : col);
+});
+const validColSpacing = computed(() => validLength(props.colSpacing));
+const validContainerHeight = computed(
+  () => validLength(props.height) || (containerHeight.value > 0 ? `${containerHeight.value}px` : ''),
+);
+const validSortedBreakAt = computed(() => {
+  const valid: number[][] = [];
+  Object.entries(props.breakAt).forEach(([k, v]) => {
+    const ikv = [Number(k) || 0, Number(v) || 0];
+    if (Math.min(...ikv) > 0) valid.push(ikv);
+  });
+  valid.length ? addResizeListener() : removeResizeListener();
+  return valid.sort(([w1], [w2]) => w1 - w2);
+});
+
+const throttleUpdateWidth = throttle(updateWidth, 100);
+
+watch(validSortedBreakAt, () => updateOrder(), { deep: true });
+
+onMounted(() => {
+  if (validSortedBreakAt.value.length) updateWidth();
+  updateOrder(false);
+  watch(validCol, () => updateOrder());
+});
+
+onBeforeUnmount(() => {
+  stopObserve();
+  removeResizeListener();
+});
+
+function validLength(val?: number | string) {
+  if (!val) return 0;
+  return Number(val) ? `${val}px` : val;
+}
+
+function getItems() {
+  if (!container.value) return [];
+  return Array.from(container.value.children)
+    .filter(el => el.getAttribute('vue-flex-waterfall-split') === null)
+    .map(el => {
+      const { marginTop, marginBottom } = window.getComputedStyle(el);
+      const ph = el.getBoundingClientRect().height + parseFloat(marginTop) + parseFloat(marginBottom);
+      return { el: el as HTMLElement, ph };
+    });
+}
+
+async function updateOrder(emitEvent = true) {
+  stopObserve();
+  containerHeight.value = 0;
+  let orderChanged = false;
+  const colsHeight = Array(validCol.value).fill(0);
+  const items = getItems() || [];
+  items.forEach(({ el, ph }) => {
+    const minI = colsHeight.indexOf(Math.min(...colsHeight));
+    const oldOrder = el.style.order;
+    const newOrder = String(minI + 1);
+    if (oldOrder != newOrder) {
+      el.style.order = newOrder;
+      orderChanged = true;
+    }
+    colsHeight[minI] += ph;
+  });
+  containerHeight.value = Math.max(...colsHeight);
+  await nextTick();
+  startObserve();
+  if (emitEvent && orderChanged) emit('orderUpdated');
+}
+
+function updateWidth() {
+  winWidth.value = props.breakByContainer ? container.value!.clientWidth : window.innerWidth;
+}
+
+function startObserve() {
+  observer.observe(container.value!, { attributes: true, childList: true, subtree: true });
+}
+
+function stopObserve() {
+  observer.disconnect();
+}
+
+function addResizeListener() {
+  window.addEventListener('resize', throttleUpdateWidth);
+}
+
+function removeResizeListener() {
+  window.removeEventListener('resize', throttleUpdateWidth);
+}
+
+defineExpose({ updateOrder });
+</script>

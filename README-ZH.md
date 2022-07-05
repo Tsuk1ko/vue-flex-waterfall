@@ -28,13 +28,13 @@ npm i vue-flex-waterfall
 ### Vue 项目
 
 ```html
-<vue-flex-waterfall
+<VueFlexWaterfall
   col="4"
   col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
 >
   <!-- items -->
-</vue-flex-waterfall>
+</VueFlexWaterfall>
 ```
 
 ```js
@@ -53,7 +53,7 @@ export default {
 ### 浏览器
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@1.0/dist/vue-flex-waterfall.min.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
 ```
 
 ## 参数
@@ -102,7 +102,7 @@ export default {
 
 ## 事件
 
-### order-update
+### order-updated
 
 插槽中元素的 `order` 属性被更新后触发
 
@@ -112,7 +112,7 @@ export default {
 
 调用该方法可以手动触发 `order` 更新
 
-如何调用组件方法：[Vue.js 文档 - 访问子组件实例或子元素](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)
+如何调用组件方法：见 Vue 文档 - [ref](https://v3.cn.vuejs.org/api/special-attributes.html#ref)
 
 ## 提示
 

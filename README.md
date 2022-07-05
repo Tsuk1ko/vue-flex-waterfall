@@ -29,13 +29,13 @@ npm i vue-flex-waterfall
 ### Vue project
 
 ```html
-<vue-flex-waterfall
+<VueFlexWaterfall
   col="4"
   col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
 >
   <!-- items -->
-</vue-flex-waterfall>
+</VueFlexWaterfall>
 ```
 
 ```js
@@ -54,7 +54,7 @@ export default {
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@1.0/dist/vue-flex-waterfall.min.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
 ```
 
 ## Props
@@ -103,7 +103,7 @@ When enable, the breakpoints will be based on the container width instead of the
 
 ## Events
 
-### order-update
+### order-updated
 
 Will be emited after `order` of slot elements are updated.
 
@@ -113,7 +113,7 @@ Will be emited after `order` of slot elements are updated.
 
 You can call this method to trigger `order` updating.
 
-How to call component method: [Vue.js Guide - Accessing Child Component Instances & Child Elements](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements)
+How to call component method: see Vue Guide - [ref](https://v3.cn.vuejs.org/api/special-attributes.html#ref)
 
 ## Tips
 
