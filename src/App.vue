@@ -30,7 +30,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import VueFlexWaterfall from './VueFlexWaterfall.vue';
+import { VueFlexWaterfall } from '.';
+// import { VueFlexWaterfall } from '..';
 
 let nextI = 15;
 const items = ref(

@@ -4,15 +4,17 @@
   "version": "1.0.7",
   "files": [
     "dist/*.js",
-    "dist/*.map"
+    "dist/*.map",
+    "typings"
   ],
+  "types": "./typings/index.d.ts",
   "main": "./dist/vue-flex-waterfall.umd.js",
-  "module": "./dist/vue-flex-waterfall.mjs",
+  "module": "./dist/vue-flex-waterfall.es.js",
   "unpkg": "./dist/vue-flex-waterfall.umd.js",
   "jsdelivr": "./dist/vue-flex-waterfall.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-flex-waterfall.mjs",
+      "import": "./dist/vue-flex-waterfall.es.js",
       "require": "./dist/vue-flex-waterfall.umd.js"
     }
   },

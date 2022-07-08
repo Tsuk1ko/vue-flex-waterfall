@@ -22,7 +22,7 @@ const libConfig = defineConfig({
     sourcemap: true,
     // cssCodeSplit: false,
     lib: {
-      entry: resolve(__dirname, 'src/lib.ts'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'VueFlexWaterfall',
     },
     rollupOptions: {

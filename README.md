@@ -91,7 +91,9 @@ Type: `Object`
 
 Default: `null`
 
-This object allows you to specify how the number of columns will change based on the width of the viewport. Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
+This object allows you to specify how the number of columns will change based on the width of the viewport.
+
+Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
 
 ### break-by-container
 
