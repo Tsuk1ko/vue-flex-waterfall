@@ -2,21 +2,24 @@
 
 [![Version](https://img.shields.io/npm/v/vue-flex-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/vue-flex-waterfall)
 [![License](https://img.shields.io/npm/l/vue-flex-waterfall.svg?style=flat-square)](LICENSE)
+
 [中文文档](README-ZH.md)
 
-A horizontal sorting waterfall layout component for Vue 2, realized by flex layout.
+A horizontal sorting waterfall layout component for Vue 3, realized by flex layout.
 
 Refer to [CSS masonry with flexbox, :nth-child(), and order](https://tobiasahlin.com/blog/masonry-with-css/).
+
+> Version 2 requires Vue 3. If you are looking for a Vue 2 compatible version, use [version 1](https://github.com/Tsuk1ko/vue-flex-waterfall/tree/v1).
 
 ## Demo
 
 [Vue Flex Waterfall Demo](https://tsuk1ko.github.io/vue-flex-waterfall/)
 
-[Source code of demo](demo/src/App.vue)
+[Source code of demo](src/App.vue)
 
 ## Requirements
 
-Vue ^2.0.0
+Vue ^3.0.0
 
 ## Installation
 

@@ -3,19 +3,21 @@
 [![Version](https://img.shields.io/npm/v/vue-flex-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/vue-flex-waterfall)
 [![License](https://img.shields.io/npm/l/vue-flex-waterfall.svg?style=flat-square)](LICENSE)
 
-用 flex 实现的横向排序的瀑布流布局 Vue 2 组件
+用 flex 实现的横向排序的瀑布流布局 Vue 3 组件
 
 原理见 [纯 CSS 实现横向排序的瀑布流式布局](https://jessieji.com/2019/pure-css-masonry)
+
+> 如果你使用 Vue 2，那么请使用 [v1](https://github.com/Tsuk1ko/vue-flex-waterfall/tree/v1)
 
 ## Demo
 
 [Vue Flex Waterfall Demo](https://tsuk1ko.github.io/vue-flex-waterfall/)
 
-[Demo 源码](demo/src/App.vue)
+[Demo 源码](src/App.vue)
 
 ## 需求
 
-Vue ^2.0.0
+Vue ^3.0.0
 
 ## 安装
 
