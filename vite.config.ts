@@ -7,6 +7,7 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 const isDemo = process.env.CONFIG_TYPE === 'demo';
 
 const demoConfig = defineConfig({
+  base: './',
   plugins: [vue(), cssInjectedByJsPlugin()],
   build: {
     target: 'es2015',
