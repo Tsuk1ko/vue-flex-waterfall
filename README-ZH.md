@@ -3,19 +3,21 @@
 [![Version](https://img.shields.io/npm/v/vue-flex-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/vue-flex-waterfall)
 [![License](https://img.shields.io/npm/l/vue-flex-waterfall.svg?style=flat-square)](LICENSE)
 
-用 flex 实现的横向排序的瀑布流布局 Vue 2 组件
+用 flex 实现的横向排序的瀑布流布局 Vue 3 组件
 
 原理见 [纯 CSS 实现横向排序的瀑布流式布局](https://jessieji.com/2019/pure-css-masonry)
+
+> 如果你使用 Vue 2，那么请使用 [v1](https://github.com/Tsuk1ko/vue-flex-waterfall/tree/v1)
 
 ## Demo
 
 [Vue Flex Waterfall Demo](https://tsuk1ko.github.io/vue-flex-waterfall/)
 
-[Demo 源码](demo/src/App.vue)
+[Demo 源码](src/App.vue)
 
 ## 需求
 
-Vue ^2.0.0
+Vue ^3.0.0
 
 ## 安装
 
@@ -28,13 +30,13 @@ npm i vue-flex-waterfall
 ### Vue 项目
 
 ```html
-<vue-flex-waterfall
+<VueFlexWaterfall
   col="4"
   col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
 >
   <!-- items -->
-</vue-flex-waterfall>
+</VueFlexWaterfall>
 ```
 
 ```js
@@ -53,7 +55,7 @@ export default {
 ### 浏览器
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@1.0/dist/vue-flex-waterfall.min.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
 ```
 
 ## 参数
@@ -102,7 +104,7 @@ export default {
 
 ## 事件
 
-### order-update
+### order-updated
 
 插槽中元素的 `order` 属性被更新后触发
 
@@ -112,7 +114,7 @@ export default {
 
 调用该方法可以手动触发 `order` 更新
 
-如何调用组件方法：[Vue.js 文档 - 访问子组件实例或子元素](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0)
+如何调用组件方法：见 Vue 文档 - [ref](https://v3.cn.vuejs.org/api/special-attributes.html#ref)
 
 ## 提示
 

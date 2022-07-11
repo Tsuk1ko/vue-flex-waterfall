@@ -2,21 +2,24 @@
 
 [![Version](https://img.shields.io/npm/v/vue-flex-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/vue-flex-waterfall)
 [![License](https://img.shields.io/npm/l/vue-flex-waterfall.svg?style=flat-square)](LICENSE)
+
 [中文文档](README-ZH.md)
 
-A horizontal sorting waterfall layout component for Vue 2, realized by flex layout.
+A horizontal sorting waterfall layout component for Vue 3, realized by flex layout.
 
 Refer to [CSS masonry with flexbox, :nth-child(), and order](https://tobiasahlin.com/blog/masonry-with-css/).
+
+> Version 2 requires Vue 3. If you are looking for a Vue 2 compatible version, use [version 1](https://github.com/Tsuk1ko/vue-flex-waterfall/tree/v1).
 
 ## Demo
 
 [Vue Flex Waterfall Demo](https://tsuk1ko.github.io/vue-flex-waterfall/)
 
-[Source code of demo](demo/src/App.vue)
+[Source code of demo](src/App.vue)
 
 ## Requirements
 
-Vue ^2.0.0
+Vue ^3.0.0
 
 ## Installation
 
@@ -29,13 +32,13 @@ npm i vue-flex-waterfall
 ### Vue project
 
 ```html
-<vue-flex-waterfall
+<VueFlexWaterfall
   col="4"
   col-spacing="15"
   :break-at="{ 900: 3, 600: 2, 300: 1 }"
 >
   <!-- items -->
-</vue-flex-waterfall>
+</VueFlexWaterfall>
 ```
 
 ```js
@@ -54,7 +57,7 @@ export default {
 ### Browser
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@1.0/dist/vue-flex-waterfall.min.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
 ```
 
 ## Props
@@ -91,7 +94,9 @@ Type: `Object`
 
 Default: `null`
 
-This object allows you to specify how the number of columns will change based on the width of the viewport. Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
+This object allows you to specify how the number of columns will change based on the width of the viewport.
+
+Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
 
 ### break-by-container
 
@@ -103,7 +108,7 @@ When enable, the breakpoints will be based on the container width instead of the
 
 ## Events
 
-### order-update
+### order-updated
 
 Will be emited after `order` of slot elements are updated.
 
@@ -113,7 +118,7 @@ Will be emited after `order` of slot elements are updated.
 
 You can call this method to trigger `order` updating.
 
-How to call component method: [Vue.js Guide - Accessing Child Component Instances & Child Elements](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements)
+How to call component method: see Vue Guide - [ref](https://v3.cn.vuejs.org/api/special-attributes.html#ref)
 
 ## Tips
 

@@ -4,23 +4,27 @@ on:
     branches:
       - master
     paths:
-      - 'src/**'
-      - 'demo/**'
-      - '.github/workflows/pages-deploy.yml'
+      - "vite.config.ts"
+      - "src/**"
+      - ".github/workflows/pages-deploy.yml"
 jobs:
   build-and-deploy-demo:
-    env:
-      ENABLE_AUTO_DEPLOY: ${{ !!secrets.ACCESS_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        if: env.ENABLE_AUTO_DEPLOY == 'true'
-        uses: actions/checkout@v1
-      - name: Build and Deploy Demo to GitHub Pages
-        if: env.ENABLE_AUTO_DEPLOY == 'true'
-        uses: JamesIves/github-pages-deploy-action@releases/v2
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: demo/dist
-          BUILD_SCRIPT: yarn && yarn run build:demo
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          persist-credentials: false
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint
+        run: yarn run lint
+      - name: Build
+        run: yarn run build:demo
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: demo
+          single-commit: true

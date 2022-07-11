@@ -1,26 +1,46 @@
 {
   "name": "vue-flex-waterfall",
   "description": "A horizontal sorting waterfall layout component for Vue.js, realized by flex layout",
-  "version": "1.0.8",
-  "main": "src/Waterfall.vue",
-  "unpkg": "dist/vue-flex-waterfall.min.js",
-  "jsdelivr": "dist/vue-flex-waterfall.min.js",
+  "version": "2.0.0",
+  "files": [
+    "dist/*.js",
+    "dist/*.map",
+    "typings"
+  ],
+  "types": "./typings/index.d.ts",
+  "main": "./dist/vue-flex-waterfall.umd.js",
+  "module": "./dist/vue-flex-waterfall.es.js",
+  "unpkg": "./dist/vue-flex-waterfall.umd.js",
+  "jsdelivr": "./dist/vue-flex-waterfall.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-flex-waterfall.es.js",
+      "require": "./dist/vue-flex-waterfall.umd.js"
+    }
+  },
   "scripts": {
-    "serve:demo": "cd ./demo && vue-cli-service serve",
-    "build:demo": "cd ./demo && vue-cli-service build",
-    "build": "vue-cli-service build --target wc --name vue-flex-waterfall --dest dist src/Waterfall.vue && node ./tools/rmDemoHTML.js",
-    "lint": "vue-cli-service lint"
+    "build": "vue-tsc --noEmit && vite build",
+    "dev:demo": "cross-env CONFIG_TYPE=demo vite",
+    "build:demo": "cross-env CONFIG_TYPE=demo npm run build",
+    "preview:demo": "cross-env CONFIG_TYPE=demo vite preview",
+    "lint": "eslint . --ext .vue,.js,.ts"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.3.1",
-    "@vue/cli-plugin-eslint": "~4.3.1",
-    "@vue/cli-service": "~4.3.1",
-    "babel-eslint": "^10.1.0",
-    "core-js": "^3.6.5",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.19.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14",
+    "vite-plugin-css-injected-by-js": "^1.5.1",
+    "vue": "^3.2.37",
+    "vue-tsc": "^0.38.4"
   },
   "author": "Jindai Kirin",
   "license": "MIT",
@@ -37,21 +57,6 @@
     "flex",
     "waterfall"
   ],
-  "eslintConfig": {
-    "ignorePatterns": ["dist"],
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
