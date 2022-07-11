@@ -32,6 +32,7 @@
 import { ref } from 'vue';
 import { VueFlexWaterfall } from '.';
 // import { VueFlexWaterfall } from '..';
+// import { VueFlexWaterfall } from 'vue-flex-waterfall';
 
 let nextI = 15;
 const items = ref(
