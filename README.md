@@ -66,11 +66,21 @@ export default {
 
 Type: `Number | String`
 
-Default: `null`
+Default: `undefined`
 
 You can specify the height of the container. If not, height will be calculated automatically.
 
 The unit is *px* when it is a number.
+
+### align-content
+
+Type: `String`
+
+Default: `'start'`
+
+Equal to *align-content* CSS value of the container.
+
+[MDN document](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)
 
 ### col
 
@@ -92,7 +102,7 @@ Column spacing. The unit is *px* when it is a number.
 
 Type: `Object`
 
-Default: `null`
+Default: `{}`
 
 This object allows you to specify how the number of columns will change based on the width of the viewport.
 
@@ -110,7 +120,7 @@ When enable, the breakpoints will be based on the container width instead of the
 
 ### order-updated
 
-Will be emited after `order` of slot elements are updated.
+Will be emitted after `order` of slot elements are updated.
 
 ## Methods
 

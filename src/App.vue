@@ -1,12 +1,12 @@
 <template>
   <vue-flex-waterfall
     class="mdui-container mdui-m-b-4 mdui-p-a-0"
+    align-content="center"
     col="5"
     col-spacing="15"
     :break-at="breakAt"
     :break-by-container="true"
     @order-updated="onOrderUpdated"
-    style="align-content: center"
   >
     <div class="item" v-for="(item, index) in items" :key="item.i" :style="{ height: `${item.h}px` }">
       <i class="mdui-icon material-icons close" @click="deleteItem(index)">close</i>
@@ -19,7 +19,7 @@
           placeholder="Width (px)"
           v-model="item.h"
         />
-        px
+        <span class="unit">px</span>
       </div>
     </div>
     <div class="item new" @click="items.push({ i: nextI++, h: 200 })">
@@ -96,6 +96,9 @@ input:focus {
   font-size: 50px;
   user-select: none;
   flex-basis: 100%;
+}
+.item .unit {
+  user-select: none;
 }
 .item.new .num {
   font-size: 80px;

@@ -7,6 +7,11 @@ export interface VueFlexWaterfallProps {
    */
   height?: number | string;
   /**
+   * Equal to *align-content* CSS value of the container.
+   * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/align-content}
+   */
+  alignContent?: string;
+  /**
    * Default number of column. Use the `break-at` prop to specify breakpoints for this value.
    */
   col?: number | string;
@@ -15,7 +20,7 @@ export interface VueFlexWaterfallProps {
    */
   colSpacing?: number | string;
   /**
-   * This object allows you to specify how the number of columns will change based on the width of the viewport.
+   * This object allows you to specify how the number of columns will change based on the width of the viewport.  
    * Setting this option to `{ 900: 3 }` for example will adjust the number of columns to 3 when the viewport change and is <= 900px.
    */
   breakAt?: Record<string, number>;

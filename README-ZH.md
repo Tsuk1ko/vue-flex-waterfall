@@ -64,11 +64,21 @@ export default {
 
 类型：`Number | String`
 
-默认值：`null`
+默认值：`undefined`
 
 你可以手动指定容器高度，当不指定时，会自动计算高度
 
-列间距，给定一个数字时其单位为 *px*
+给定一个数字时其单位为 *px*
+
+### align-content
+
+类型：`String`
+
+默认值：`'start'`
+
+等同于容器的 *align-content* CSS 变量
+
+[MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
 
 ### col
 
@@ -90,7 +100,7 @@ export default {
 
 类型：`Object`
 
-默认值：`null`
+默认值：`{}`
 
 给定一个对象来指定不同宽度下的列数，例如 `{ 900: 3 }` 则表示当宽度 <= 900px 时将会变为 3 列
 

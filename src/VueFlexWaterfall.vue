@@ -1,8 +1,8 @@
 <template>
   <div
     ref="container"
-    :style="{ height: validContainerHeight }"
-    style="display: flex; align-content: flex-start; flex-flow: column wrap"
+    :style="{ height: validContainerHeight, 'align-content': alignContent }"
+    style="display: flex; flex-flow: column wrap"
     @load.capture="updateOrder()"
   >
     <slot></slot>
@@ -24,12 +24,14 @@ const emit = defineEmits<{ (event: 'orderUpdated'): void }>();
 const props = withDefaults(
   defineProps<{
     height?: number | string;
+    alignContent?: string;
     col?: number | string;
     colSpacing?: number | string;
     breakAt?: Record<string, number>;
     breakByContainer?: boolean;
   }>(),
   {
+    align: 'start',
     col: 1,
     colSpacing: 0,
     breakAt: () => ({}),
