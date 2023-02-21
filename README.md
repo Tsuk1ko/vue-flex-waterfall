@@ -62,6 +62,16 @@ export default {
 
 ## Props
 
+### align-content
+
+Type: `String`
+
+Default: `undefined`
+
+Equal to *align-content* CSS value of the container.
+
+[MDN document](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)
+
 ### height
 
 Type: `Number | String`
@@ -71,16 +81,6 @@ Default: `undefined`
 You can specify the height of the container. If not, height will be calculated automatically.
 
 The unit is *px* when it is a number.
-
-### align-content
-
-Type: `String`
-
-Default: `'start'`
-
-Equal to *align-content* CSS value of the container.
-
-[MDN document](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)
 
 ### col
 
@@ -97,6 +97,8 @@ Type: `Number | String`
 Default: `0`
 
 Column spacing. The unit is *px* when it is a number.
+
+Please note that its performance is related to the `align-content`.
 
 ### break-at
 
@@ -133,4 +135,4 @@ How to call component method: see Vue Guide - [ref](https://v3.cn.vuejs.org/api/
 ## Tips
 
 1. You can set `margin-bottom` style for slot elements to control their vertical spacing.
-2. You can set `align-content` style for vue-flex-waterfall component to control column alignment.
+2. You can set the prop `align-content` to control column alignment.

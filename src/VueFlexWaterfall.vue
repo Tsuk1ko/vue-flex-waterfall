@@ -31,7 +31,6 @@ const props = withDefaults(
     breakByContainer?: boolean;
   }>(),
   {
-    align: 'start',
     col: 1,
     colSpacing: 0,
     breakAt: () => ({}),

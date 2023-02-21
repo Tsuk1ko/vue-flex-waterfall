@@ -60,6 +60,16 @@ export default {
 
 ## 参数
 
+### align-content
+
+类型：`String`
+
+默认值：`undefined`
+
+等同于容器的 *align-content* CSS 变量
+
+[MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
+
 ### height
 
 类型：`Number | String`
@@ -69,16 +79,6 @@ export default {
 你可以手动指定容器高度，当不指定时，会自动计算高度
 
 给定一个数字时其单位为 *px*
-
-### align-content
-
-类型：`String`
-
-默认值：`'start'`
-
-等同于容器的 *align-content* CSS 变量
-
-[MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content)
 
 ### col
 
@@ -94,7 +94,7 @@ export default {
 
 默认值：`0`
 
-列间距，给定一个数字时其单位为 *px*
+列间距，给定一个数字时其单位为 *px*，请注意其表现与 `align-content` 有关
 
 ### break-at
 
@@ -129,4 +129,4 @@ export default {
 ## 提示
 
 1. 你可以通过给瀑布流内元素设置 `margin-bottom` 样式来控制其垂直间距
-2. 你可以通过给组件设置 `align-content` 样式来改变列对齐方式
+2. 你可以通过设置组件的 `align-content` 参数来改变列对齐方式
