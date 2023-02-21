@@ -64,7 +64,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 input[type='number'] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 input:focus {
   outline-width: 0;
