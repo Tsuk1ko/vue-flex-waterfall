@@ -42,7 +42,7 @@ const props = withDefaults(
 const containerHeight = ref(0);
 const winWidth = ref(0);
 const container = ref<HTMLElement>();
-let observer: MutationObserver;
+let observer: MutationObserver | undefined;
 
 const validCol = computed(() => {
   const intCol = Number(props.col);
@@ -123,11 +123,11 @@ function updateWidth() {
 }
 
 function startObserve() {
-  observer.observe(container.value!, { attributes: true, childList: true, subtree: true });
+  observer?.observe(container.value!, { attributes: true, childList: true, subtree: true });
 }
 
 function stopObserve() {
-  observer.disconnect();
+  observer?.disconnect();
 }
 
 function addResizeListener() {
