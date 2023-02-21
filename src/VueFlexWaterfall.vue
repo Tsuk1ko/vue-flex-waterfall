@@ -42,7 +42,7 @@ const props = withDefaults(
 const containerHeight = ref(0);
 const winWidth = ref(0);
 const container = ref<HTMLElement>();
-const observer = new MutationObserver(() => updateOrder());
+let observer: MutationObserver;
 
 const validCol = computed(() => {
   const intCol = Number(props.col);
@@ -69,6 +69,7 @@ const throttleUpdateWidth = throttle(updateWidth, 100);
 watch(validSortedBreakAt, () => updateOrder(), { deep: true });
 
 onMounted(() => {
+  observer = new MutationObserver(() => updateOrder());
   if (validSortedBreakAt.value.length) updateWidth();
   updateOrder(false);
   watch(validCol, () => updateOrder());
