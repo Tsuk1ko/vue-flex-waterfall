@@ -59,7 +59,10 @@ const validSortedBreakAt = computed(() => {
     const ikv = [Number(k) || 0, Number(v) || 0];
     if (Math.min(...ikv) > 0) valid.push(ikv);
   });
-  valid.length ? addResizeListener() : removeResizeListener();
+  // for Nuxt compatibility
+  if (typeof window !== 'undefined') {
+    valid.length ? addResizeListener() : removeResizeListener();
+  }
   return valid.sort(([w1], [w2]) => w1 - w2);
 });
 
