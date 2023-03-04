@@ -1,5 +1,5 @@
 <template>
-  <vue-flex-waterfall
+  <VueFlexWaterfall
     class="mdui-container mdui-m-b-4 mdui-p-a-0"
     align-content="center"
     col="5"
@@ -25,7 +25,7 @@
     <div class="item new" @click="items.push({ i: nextI++, h: 200 })">
       <div class="num">+</div>
     </div>
-  </vue-flex-waterfall>
+  </VueFlexWaterfall>
 </template>
 
 <script lang="ts" setup>

@@ -17,47 +17,49 @@ Refer to [CSS masonry with flexbox, :nth-child(), and order](https://tobiasahlin
 
 [Source code of demo](src/App.vue)
 
-## Requirements
+## Installation
+
+### Requirements
 
 Vue ^3.0.0
 
-## Installation
+### Node
 
 ```bash
 npm i vue-flex-waterfall
 ```
 
-## Usage
-
-### Vue project
-
-```html
-<VueFlexWaterfall
-  col="4"
-  col-spacing="15"
-  :break-at="{ 900: 3, 600: 2, 300: 1 }"
->
-  <!-- items -->
-</VueFlexWaterfall>
-```
-
-```js
-import VueFlexWaterfall from 'vue-flex-waterfall';
-
-export default {
-  // ...
-  components: {
-    VueFlexWaterfall,
-    // ...
-  },
-  // ...
-}
-```
-
 ### Browser
 
+#### UNPKG
+
 ```html
-<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2"></script>
+```
+
+#### jsDelivr
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@2"></script>
+```
+
+## Usage
+
+```vue
+<template>
+  <VueFlexWaterfall
+    align-content="center"
+    col="4"
+    col-spacing="16"
+    :break-at="{ 900: 3, 600: 2, 300: 1 }"
+  >
+    <!-- items -->
+  </VueFlexWaterfall>
+</template>
+
+<script setup>
+import { VueFlexWaterfall } from 'vue-flex-waterfall';
+</script>
 ```
 
 ## Props

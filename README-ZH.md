@@ -15,47 +15,49 @@
 
 [Demo 源码](src/App.vue)
 
-## 需求
+## 安装
+
+### 需求
 
 Vue ^3.0.0
 
-## 安装
+### Node
 
 ```bash
 npm i vue-flex-waterfall
 ```
 
-## 使用
-
-### Vue 项目
-
-```html
-<VueFlexWaterfall
-  col="4"
-  col-spacing="15"
-  :break-at="{ 900: 3, 600: 2, 300: 1 }"
->
-  <!-- items -->
-</VueFlexWaterfall>
-```
-
-```js
-import VueFlexWaterfall from 'vue-flex-waterfall';
-
-export default {
-  // ...
-  components: {
-    VueFlexWaterfall,
-    // ...
-  },
-  // ...
-}
-```
-
 ### 浏览器
 
+#### UNPKG
+
 ```html
-<script src="https://unpkg.com/vue-flex-waterfall@2/dist/vue-flex-waterfall.umd.js"></script>
+<script src="https://unpkg.com/vue-flex-waterfall@2"></script>
+```
+
+#### jsDelivr
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue-flex-waterfall@2"></script>
+```
+
+## 使用
+
+```vue
+<template>
+  <VueFlexWaterfall
+    align-content="center"
+    col="4"
+    col-spacing="16"
+    :break-at="{ 900: 3, 600: 2, 300: 1 }"
+  >
+    <!-- items -->
+  </VueFlexWaterfall>
+</template>
+
+<script setup>
+import { VueFlexWaterfall } from 'vue-flex-waterfall';
+</script>
 ```
 
 ## 参数
