@@ -5,8 +5,6 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
-const isDemo = process.env.CONFIG_TYPE === 'demo';
-
 const demoConfig = () =>
   defineConfig({
     base: '',
@@ -20,7 +18,7 @@ const demoConfig = () =>
 
 const libConfig = () =>
   defineConfig({
-    plugins: [vue(), dts({ copyDtsFiles: false })],
+    plugins: [vue(), dts()],
     build: {
       target: 'es2015',
       sourcemap: true,
@@ -39,4 +37,4 @@ const libConfig = () =>
     },
   });
 
-export default isDemo ? demoConfig() : libConfig();
+export default process.env.CONFIG_TYPE === 'demo' ? demoConfig() : libConfig();
