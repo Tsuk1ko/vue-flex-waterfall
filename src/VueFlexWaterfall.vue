@@ -3,7 +3,6 @@
     ref="container"
     :style="{ height: validContainerHeight, 'align-content': alignContent }"
     style="display: flex; flex-flow: column wrap"
-    @load.capture="updateOrder()"
   >
     <slot></slot>
     <div

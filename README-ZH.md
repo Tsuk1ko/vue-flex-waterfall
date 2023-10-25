@@ -132,3 +132,4 @@ import { VueFlexWaterfall } from 'vue-flex-waterfall';
 
 1. 你可以通过给瀑布流内元素设置 `margin-bottom` 样式来控制其垂直间距
 2. 你可以通过设置组件的 `align-content` 参数来改变列对齐方式
+3. 如果瀑布流内有图片等会因加载或内容更新导致内容高度变化的元素，请在高度变动后重新调用 `updateOrder()`，或提前固定元素大小

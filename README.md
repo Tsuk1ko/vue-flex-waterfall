@@ -138,3 +138,4 @@ How to call component method: see Vue Guide - [ref](https://v3.cn.vuejs.org/api/
 
 1. You can set `margin-bottom` style for slot elements to control their vertical spacing.
 2. You can set the prop `align-content` to control column alignment.
+3. If there are elements that its size will change, such as images, please call `updateOrder()` after the size change or fixed the size.
