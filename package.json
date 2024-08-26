@@ -16,7 +16,8 @@
   "exports": {
     ".": {
       "import": "./dist/vue-flex-waterfall.mjs",
-      "require": "./dist/vue-flex-waterfall.umd.js"
+      "require": "./dist/vue-flex-waterfall.umd.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
